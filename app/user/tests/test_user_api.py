@@ -25,7 +25,7 @@ class PublicUserApiTests(TestCase):
         payload = {
             'email': 'savethevideogames@gmail.com',
             'password': 'testpass',
-            'name': 'Test name'
+            'name': 'Test name',
         }
 
         res = self.client.post(CREATE_USER_URL, payload)
@@ -46,7 +46,7 @@ class PublicUserApiTests(TestCase):
 
     def test_password_too_short(self):
         """Test that the password must be more than 5 characters"""
-        payload = {'email': 'savethevideogames@gmail.com', 'password': 'pw'}
+
         payload = {
             'email': 'savethevideogames@gmail.com',
             'password': 'pw',

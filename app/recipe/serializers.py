@@ -16,4 +16,4 @@ class IngredientSerializer(serializers.ModelSerializer):
     class Meta:
         model = Ingredient
         fields = ('id', 'name')
-        reaad_only_fields = ('id',)
+        read_only_fields = ('id',)
