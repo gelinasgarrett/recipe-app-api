@@ -28,7 +28,7 @@ class PrivateTagsApiTests(TestCase):
 
     def setUp(self):
         self.user = get_user_model().objects.create_user(
-            'test@gmai.com'
+            'test@gmail.com',
             'password123'
         )
         self.client = APIClient()
@@ -50,7 +50,7 @@ class PrivateTagsApiTests(TestCase):
     def test_tags_limited_to_user(self):
         """Test that tags returned are for the authenticated user"""
         user2 = get_user_model().objects.create_user(
-            'other@gmail.com'
+            'other@gmail.com',
             'testpass'
         )
         Tag.objects.create(user=user2, name='Fruity')
@@ -64,7 +64,7 @@ class PrivateTagsApiTests(TestCase):
 
     def test_create_tag_successful(self):
         """Test creating a new tag"""
-        payload = {'name': 'Test tag'}
+        payload = {'name': 'Simple'}
         self.client.post(TAGS_URL, payload)
 
         exists = Tag.objects.filter(
