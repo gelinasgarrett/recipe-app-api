@@ -58,6 +58,7 @@ class ModelTests(TestCase):
 			user=sample_user(),
 			name='Cucumber'
 			)
+			
 		self.assertEqual(str(ingredient), ingredient.name)
 
 
@@ -67,7 +68,7 @@ class ModelTests(TestCase):
 			user=sample_user(),
 			title='Steak and butter sauce',
 			time_minutes=5,
-			price=5.00,
+			price=5.00
 		)
 
-		self.assertEqual(str(recipe), recipe.tite)
+		self.assertEqual(str(recipe), recipe.title)
